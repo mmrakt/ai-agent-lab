@@ -22,7 +22,6 @@
     { "name": "agents/qa.agent.md", "target": ".github/agents/qa.agent.md" },
     { "name": "agents/security.agent.md", "target": ".github/agents/security.agent.md" },
     { "name": "agents/uiux.agent.md", "target": ".github/agents/uiux.agent.md" },
-    { "name": "prompts/address-review.prompt.md", "target": ".github/prompts/address-review.prompt.md" },
     { "name": "prompts/check-all.prompt.md", "target": ".github/prompts/check-all.prompt.md" },
     { "name": "prompts/commit.prompt.md", "target": ".github/prompts/commit.prompt.md" },
     { "name": "prompts/create-adr.prompt.md", "target": ".github/prompts/create-adr.prompt.md" },
