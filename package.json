@@ -1,0 +1,16 @@
+{
+  "name": "private-config-registry",
+  "version": "1.0.0",
+  "description": "Private Config Registry - CLI-driven distribution of AI agent config files",
+  "type": "module",
+  "scripts": {
+    "build": "tsx scripts/build.ts",
+    "clean": "rm -rf public/r",
+    "preinstall": "npx only-allow pnpm"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "@types/node": "^22.0.0"
+  }
+}

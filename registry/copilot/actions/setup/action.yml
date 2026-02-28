@@ -1,0 +1,20 @@
+name: Setup
+description: Install pnpm, setup Node.js and install dependencies
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@v4
+      with:
+        node-version-file: .node-version
+
+    - uses: pnpm/action-setup@v4
+      with:
+        dest: ${{ runner.temp }}/setup-pnpm
+
+    - run: pnpm install --frozen-lockfile
+      shell: bash
+
+    - name: Generate Prisma client
+      run: pnpm -F api db:generate
+      shell: bash

@@ -1,0 +1,8 @@
+{
+  "description": "Claude Code configuration files for the team",
+  "dependencies": [],
+  "files": [
+    { "name": ".claude.json", "target": ".claude.json" },
+    { "name": "CLAUDE.md", "target": "CLAUDE.md" }
+  ]
+}
