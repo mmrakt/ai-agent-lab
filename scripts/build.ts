@@ -257,6 +257,30 @@ async function build(): Promise<void> {
   await writeFile(indexPath, JSON.stringify(legacyIndex, null, 2), "utf-8");
   console.log(`  ✅ ${indexPath}`);
 
+  // Write components.json (copy-paste ready for consumers)
+  const componentsJson = {
+    $schema: "https://ui.shadcn.com/schema.json",
+    style: "default",
+    tailwind: {
+      config: "",
+      css: "",
+      baseColor: "neutral",
+      cssVariables: false,
+    },
+    rsc: false,
+    aliases: {
+      utils: "",
+      components: "",
+    },
+    registries: {
+      [`@${REGISTRY_NAME}`]: `${REGISTRY_HOMEPAGE}/r/{name}.json`,
+    },
+  };
+
+  const componentsPath = join(ROOT, "public", "components.json");
+  await writeFile(componentsPath, JSON.stringify(componentsJson, null, 2), "utf-8");
+  console.log(`  ✅ ${componentsPath}`);
+
   console.log(
     `\n🎉 Built ${bundles.length} bundle(s) + ${individualCount} individual item(s) → public/r/`,
   );

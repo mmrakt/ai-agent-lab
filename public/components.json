@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "default",
+  "tailwind": {
+    "config": "",
+    "css": "",
+    "baseColor": "neutral",
+    "cssVariables": false
+  },
+  "rsc": false,
+  "aliases": {
+    "utils": "",
+    "components": ""
+  },
+  "registries": {
+    "@ai-agent-lab": "https://mmrakt.github.io/ai-agent-lab/r/{name}.json"
+  }
+}
