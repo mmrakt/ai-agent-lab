@@ -269,17 +269,30 @@ async function build(): Promise<void> {
     },
     rsc: false,
     aliases: {
-      utils: "",
-      components: "",
+      utils: "@/lib/utils",
+      components: "@/components",
     },
     registries: {
       [`@${REGISTRY_NAME}`]: `${REGISTRY_HOMEPAGE}/r/{name}.json`,
     },
   };
 
-  const componentsPath = join(ROOT, "public", "components.json");
+  const publicDir = join(ROOT, "public");
+
+  const componentsPath = join(publicDir, "components.json");
   await writeFile(componentsPath, JSON.stringify(componentsJson, null, 2), "utf-8");
   console.log(`  ✅ ${componentsPath}`);
+
+  // Write minimal tsconfig.json (required by shadcn CLI for path resolution)
+  const tsconfig = {
+    compilerOptions: {
+      baseUrl: ".",
+      paths: { "@/*": ["./*"] },
+    },
+  };
+  const tsconfigPath = join(publicDir, "tsconfig.json");
+  await writeFile(tsconfigPath, JSON.stringify(tsconfig, null, 2), "utf-8");
+  console.log(`  ✅ ${tsconfigPath}`);
 
   console.log(
     `\n🎉 Built ${bundles.length} bundle(s) + ${individualCount} individual item(s) → public/r/`,

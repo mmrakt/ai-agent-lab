@@ -9,8 +9,8 @@
   },
   "rsc": false,
   "aliases": {
-    "utils": "",
-    "components": ""
+    "utils": "@/lib/utils",
+    "components": "@/components"
   },
   "registries": {
     "@ai-agent-lab": "https://mmrakt.github.io/ai-agent-lab/r/{name}.json"
